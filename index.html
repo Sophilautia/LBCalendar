@@ -27,7 +27,7 @@
     // Update the images.
     function update() {
       date = overrideDate || new Date();
-      document.getElementById('mon').src = 'img/month-' + date.getMonth()++ + '.png';
+      document.getElementById('mon').src = 'img/month-' + (date.getMonth()++) + '.png';
       document.getElementById('dat').src = 'img/date-' + date.getDate() + '.png';
       document.getElementById('day').src = 'img/day-' + date.getDay() + '.png';
     }
