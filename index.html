@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Little Busters! Calendar</title>
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #cal {
+      position: relative;
+      background-image: url(./img/bg.png);
+      width: 122px;
+      height: 133px;
+    }
+
+    #mon, #dat, #day {
+      position: absolute;
+      top: 0;
+    }
+  </style>
+  <script>
+    // To debug a specific date, set this to a Date object in the console.
+    overrideDate = null;
+
+    // Update the images.
+    function update() {
+      date = overrideDate || new Date();
+      document.getElementById('mon').src = 'img/month-' + date.getMonth() + '.png';
+      document.getElementById('dat').src = 'img/date-' + date.getDate() + '.png';
+      document.getElementById('day').src = 'img/day-' + date.getDay() + '.png';
+    }
+
+    // Update on load and every 60s.
+    window.onload = update;
+    setInterval(update, 60 * 1000);
+  </script>
+</head>
+<body>
+  <div id="cal">
+    <img id="mon" />
+    <img id="dat" />
+    <img id="day" />
+  </div>
+</body>
